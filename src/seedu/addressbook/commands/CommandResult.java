@@ -26,10 +26,6 @@ public class CommandResult {
         this.relevantPersons = relevantPersons;
     }
 
-    public String getFeedbackToUser() {
-        return this.feedbackToUser;
-    }
-
     /**
      * Returns a list of persons relevant to the command command result, if any.
      */
