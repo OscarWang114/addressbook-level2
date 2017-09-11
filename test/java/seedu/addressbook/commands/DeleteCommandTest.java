@@ -96,7 +96,7 @@ public class DeleteCommandTest {
                                                                       List<ReadOnlyPerson> displayList) {
 
         DeleteCommand command = new DeleteCommand(targetVisibleIndex);
-        command.setReadOnlyData(addressBook, displayList);
+        command.setData(addressBook, displayList);
 
         return command;
     }

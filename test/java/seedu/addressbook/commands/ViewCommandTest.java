@@ -140,7 +140,7 @@ public class ViewCommandTest {
                                            List<ReadOnlyPerson> relevantPersons, String expectedMessage) {
         AddressBook expectedAddressBook = TestUtil.clone(addressBook);
 
-        viewCommand.setReadOnlyData(addressBook, relevantPersons);
+        viewCommand.setData(addressBook, relevantPersons);
         CommandResult result = viewCommand.execute();
 
         // feedback message is as expected and there are no relevant persons returned.

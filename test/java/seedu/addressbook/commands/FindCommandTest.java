@@ -56,7 +56,7 @@ public class FindCommandTest {
     private FindCommand createFindCommand(String[] keywords) {
         final Set<String> keywordSet = new HashSet<>(Arrays.asList(keywords));
         FindCommand command = new FindCommand(keywordSet);
-        command.setReadOnlyData(addressBook, Collections.emptyList());
+        command.setData(addressBook, Collections.emptyList());
         return command;
     }
 
