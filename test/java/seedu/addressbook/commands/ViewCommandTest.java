@@ -49,7 +49,7 @@ public class ViewCommandTest {
         ReadOnlyPerson stranger = new Person(new Name("me"),
                                              new Phone("123", true),
                                              new Email("some@hey.go", true),
-                                             new Address("nus", false),
+                                             new Address("21, Lower Kent Ridge Rd, NUS, 119077", false),
                                              new UniqueTagList(Collections.emptySet()));
         List<ReadOnlyPerson> listWithExtraPerson
                 = new ArrayList<ReadOnlyPerson>(listWithAllTypicalPersons);
@@ -140,11 +140,11 @@ public class ViewCommandTest {
                                            List<ReadOnlyPerson> relevantPersons, String expectedMessage) {
         AddressBook expectedAddressBook = TestUtil.clone(addressBook);
 
-        viewCommand.setData(addressBook, relevantPersons);
+        viewCommand.setReadOnlyData(addressBook, relevantPersons);
         CommandResult result = viewCommand.execute();
 
         // feedback message is as expected and there are no relevant persons returned.
-        assertEquals(expectedMessage, result.feedbackToUser);
+        assertEquals(expectedMessage, result.getFeedbackToUser());
         assertEquals(Optional.empty(), result.getRelevantPersons());
 
         // addressbook was not modified.

@@ -50,13 +50,13 @@ public class FindCommandTest {
         FindCommand command = createFindCommand(keywords);
         CommandResult result = command.execute();
 
-        assertEquals(Command.getMessageForPersonListShownSummary(expectedPersonList), result.feedbackToUser);
+        assertEquals(Command.getMessageForPersonListShownSummary(expectedPersonList), result.getFeedbackToUser());
     }
 
     private FindCommand createFindCommand(String[] keywords) {
         final Set<String> keywordSet = new HashSet<>(Arrays.asList(keywords));
         FindCommand command = new FindCommand(keywordSet);
-        command.setData(addressBook, Collections.emptyList());
+        command.setReadOnlyData(addressBook, Collections.emptyList());
         return command;
     }
 
